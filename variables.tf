@@ -4,7 +4,7 @@ variable "db_name" {}
 variable "db_user" {}
 variable "db_password" {}
 
-variable "environment name" {
+variable "environment_name" {
     description = "Name of the environment"
 }
 
