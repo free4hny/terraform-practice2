@@ -1,23 +1,13 @@
 variable "environment_name" {
     description = "Name of the environment"
+    type = string
+    default = "dev"
 }
 
 variable "vpc_id" {
     description = "VPC ID for DEV"
     type = string
-    default = ""
-}
-
-variable "vpn_name" {
-    description = "Name of the VPC"
-    type = string
-    default = ""
-}
-
-variable "vpc_aurora_subnet_id" {
-    description = "vpc subnet ids"
-    type = string
-    default = ""
+    default = "vpc-08a1b8d567baacd6e"
 }
 
 variable "aurora_username" {
