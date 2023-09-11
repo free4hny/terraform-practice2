@@ -14,7 +14,7 @@ resource "aws_rds_cluster" "TS_cluster" {
 }
 
 resource "aws_rds_cluster_instance" "aurora_instance" {
-  cluster_identifier              = aws_rds_cluster.aurora_cluster.id
+  cluster_identifier              = aws_rds_cluster.TS_cluster.id
   identifier                      = "my-aurora-instance-TS"
   instance_class                  = "db.t2.small"
   engine                          = "aurora-postgresql"
