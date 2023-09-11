@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"  # Adjust to your preferred region
 }
 
-resource "aws_rds_cluster" "TS_cluster" {
+resource "aws_rds_cluster" "ts_cluster" {
   cluster_identifier              = "my-aurora-cluster"
   engine                          = "aurora-postgresql"
   master_username                 = "postgres"
@@ -14,8 +14,8 @@ resource "aws_rds_cluster" "TS_cluster" {
 }
 
 resource "aws_rds_cluster_instance" "aurora_instance" {
-  cluster_identifier              = aws_rds_cluster.TS_cluster.id
-  identifier                      = "my-aurora-instance-TS"
+  cluster_identifier              = aws_rds_cluster.ts_cluster.id
+  identifier                      = "my-aurora-instance-ts"
   instance_class                  = "db.t2.small"
   engine                          = "aurora-postgresql"
   publicly_accessible             = false
@@ -24,5 +24,5 @@ resource "aws_rds_cluster_instance" "aurora_instance" {
 
 # Output the endpoint for connection
 output "aurora_endpoint" {
-  value = aws_rds_cluster.TS_cluster.endpoint
+  value = aws_rds_cluster.ts_cluster.endpoint
 }
