@@ -1,11 +1,6 @@
-module "security-group" {
-  source  = "terraform-aws-modules/security-group/aws"
-  version = "5.1.0"
-}
-
-module "security-group" {
-  source  = "terraform-aws-modules/vpc/aws"
-  version = "5.1.0"
+provider "aws" {
+  profile = "default"
+  region  = "us-east-1"
 }
 
 resource "aws_rds_cluster" "ts_cluster" {
