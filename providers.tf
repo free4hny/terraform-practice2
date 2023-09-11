@@ -8,5 +8,6 @@ terraform {
 }
 
 provider "aws" {
+  use_fips_endpoint = true
   region  = "us-east-1"
 }
