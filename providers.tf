@@ -1,13 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.0"
-    }
-  }
-}
-
 provider "aws" {
-  use_fips_endpoint = true
-  region  = "us-east-1"
+  region = "us-west-2"  # Change to your desired AWS region
 }
