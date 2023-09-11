@@ -4,6 +4,8 @@ module "aurora_cluster" {
   name           = "test-aurora-db-postgres-TS"
   engine         = "aurora-postgresql"
   engine_version = "14.5"
+  username = var.aurora_username
+  password = var.password
   instance_class = "db.t2.small"
   instances = {
     one = {}
