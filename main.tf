@@ -1,8 +1,3 @@
-provider "aws" {
-  profile = "default"
-  region  = "us-east-1"
-}
-
 resource "aws_rds_cluster" "ts_cluster" {
   cluster_identifier              = "my-aurora-cluster"
   engine                          = "aurora-postgresql"
