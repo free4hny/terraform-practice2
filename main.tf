@@ -1,13 +1,11 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-    }
-  }
+module "security-group" {
+  source  = "terraform-aws-modules/security-group/aws"
+  version = "5.1.0"
 }
 
-provider "aws" {
-  region  = "us-east-1"
+module "security-group" {
+  source  = "terraform-aws-modules/vpc/aws"
+  version = "5.1.0"
 }
 
 resource "aws_rds_cluster" "ts_cluster" {
