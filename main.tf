@@ -1,5 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+    }
+  }
+}
+
 provider "aws" {
-  region = "us-east-1"  # Adjust to your preferred region
+  region  = "us-east-1"
 }
 
 resource "aws_rds_cluster" "ts_cluster" {
