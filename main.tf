@@ -1,16 +1,9 @@
-resource "aws_instance" "example" {
-  ami           = "ami-0c55b159cbfafe1f0"  # This is an example Amazon Linux 2 AMI ID, replace with the desired AMI ID
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "terraform-example"
-  }
+module "aws_rds_cluster" {
+  source = "./modules/aurora_postgres"
 }
 
-output "instance_public_ip" {
-  value = aws_instance.example.public_ip
+module "s3_bucket" {
+  source = "./modules/s3_bucket"
 }
 
-output "instance_public_dns" {
-  value = aws_instance.example.public_dns
-}
+
